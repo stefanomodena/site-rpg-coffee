@@ -94,7 +94,7 @@ if (reviewsSection) {
             if (entry.isIntersecting) {
                 const ratingElement = document.querySelector('.rating-info h3');
                 if (ratingElement) {
-                    animateCounter(ratingElement, 4.8, 2000);
+                    animateCounter(ratingElement, 5.0, 2000);
                 }
                 reviewsObserver.unobserve(entry.target);
             }
@@ -329,6 +329,119 @@ document.addEventListener('keydown', (e) => {
         
         konamiCode = [];
     }
+});
+
+// Carrossel de Produtos
+class ProductCarousel {
+    constructor() {
+        this.track = document.getElementById('carouselTrack');
+        this.slides = document.querySelectorAll('.carousel-slide');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.indicators = document.getElementById('carouselIndicators');
+        this.currentSlide = 0;
+        this.totalSlides = this.slides.length;
+        this.autoPlayInterval = null;
+        this.autoPlayDelay = 4000; // 4 segundos
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.track || this.totalSlides === 0) return;
+        
+        this.createIndicators();
+        this.bindEvents();
+        this.startAutoPlay();
+        this.updateCarousel();
+    }
+    
+    createIndicators() {
+        if (!this.indicators) return;
+        
+        this.indicators.innerHTML = '';
+        for (let i = 0; i < this.totalSlides; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = 'carousel-indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => this.goToSlide(i));
+            this.indicators.appendChild(indicator);
+        }
+    }
+    
+    bindEvents() {
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.prevSlide());
+        }
+        
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.nextSlide());
+        }
+        
+        // Pausar autoplay ao passar o mouse
+        if (this.track) {
+            this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
+            this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+        }
+        
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                this.nextSlide();
+            }
+        });
+    }
+    
+    goToSlide(slideIndex) {
+        this.currentSlide = slideIndex;
+        this.updateCarousel();
+    }
+    
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateCarousel();
+    }
+    
+    prevSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateCarousel();
+    }
+    
+    updateCarousel() {
+        if (!this.track) return;
+        
+        const translateX = -this.currentSlide * 100;
+        this.track.style.transform = `translateX(${translateX}%)`;
+        
+        // Atualizar indicadores
+        const indicators = this.indicators?.querySelectorAll('.carousel-indicator');
+        if (indicators) {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === this.currentSlide);
+            });
+        }
+    }
+    
+    startAutoPlay() {
+        this.stopAutoPlay();
+        this.autoPlayInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoPlayDelay);
+    }
+    
+    stopAutoPlay() {
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        }
+    }
+}
+
+// Inicializar carrossel quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', () => {
+    new ProductCarousel();
 });
 
 console.log('🎮 RPG&Coffee - Site carregado com sucesso! ☕');

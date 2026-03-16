@@ -164,7 +164,7 @@ Edite os cards de atividades na seção correspondente:
 - **Endereço**: Rua das Flores, 123 - Centro, São Paulo, SP
 - **Telefone**: (11) 99999-9999
 - **WhatsApp**: [Link direto](https://wa.me/5511999999999)
-- **Instagram**: [@rpgcoffee](https://instagram.com/rpgcoffee)
+- **Instagram**: [@rpgcoffee](https://www.instagram.com/rpgecoffee/)
 - **Email**: contato@rpgcoffee.com
 
 ## 🕒 Horário de Funcionamento

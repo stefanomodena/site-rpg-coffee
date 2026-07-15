@@ -74,13 +74,28 @@ body {
     padding: 0 20px;
 }
 
-.nav-logo h2 {
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.nav-logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+}
+
+.nav-logo-text {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: 1.9rem;
+    font-size: 1.65rem;
     letter-spacing: 0.04em;
     color: var(--text);
     text-transform: uppercase;
+    line-height: 1;
 }
 
 .nav-logo .brand-gold {
@@ -1234,6 +1249,14 @@ body {
         display: flex;
     }
 
+    .nav-logo-img {
+        height: 36px;
+    }
+
+    .nav-logo-text {
+        font-size: 1.35rem;
+    }
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
@@ -1315,6 +1338,14 @@ body {
 }
 
 @media (max-width: 480px) {
+    .nav-logo-text {
+        display: none;
+    }
+
+    .nav-logo-img {
+        height: 40px;
+    }
+
     .hero-brand {
         font-size: 3.2rem;
     }

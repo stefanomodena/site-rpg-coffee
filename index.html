@@ -1,11 +1,11 @@
-ac<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG&Coffee - Cafeteria & Encontros Literários</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -14,7 +14,7 @@ ac<!DOCTYPE html>
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h2>RPG&Coffee</h2>
+                    <h2>RPG & <span class="brand-gold">Coffee</span></h2>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">Início</a></li>
@@ -39,15 +39,13 @@ ac<!DOCTYPE html>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Bem-vindo à RPG&Coffee</h1>
-            <p>Onde café, literatura e saberes importantes se encontram para criar experiências únicas</p>
+            <img src="assets/logo.png" alt="RPG & Coffee" class="hero-logo">
+            <h1 class="hero-brand">RPG & <span class="brand-gold">Coffee</span></h1>
+            <p class="hero-tagline">Onde café, literatura e saberes importantes se encontram para criar experiências únicas</p>
             <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary">Conheça Nossa História</a>
                 <a href="#contact" class="btn btn-secondary">Reserve sua Mesa</a>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="coffee-cup"></div>
         </div>
     </section>
 
@@ -57,8 +55,9 @@ ac<!DOCTYPE html>
             <h2 class="section-title">Sobre a RPG&Coffee</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>A RPG&Coffee nasceu da paixão por café de qualidade e pela cultura geek. Somos mais que uma cafeteria - somos um espaço de encontro para amantes de literatura, RPG, board games e, claro, café artesanal.</p>
-                    <p>Nossa missão é criar um ambiente acolhedor onde você pode desfrutar de um café excepcional enquanto mergulha em mundos fantásticos através de livros, jogos e conversas inspiradoras.</p>
+                    <p>A RPG&Coffee nasceu da paixão por café. Somos mais que uma cafeteria - somos um espaço de encontro para amantes do cinema, de literatura, RPG, board games e, claro, café artesanal.</p>
+                    <p>Nossa missão é criar um ambiente acolhedor onde você pode desfrutar de um cardápio incrível enquanto mergulha em mundos fantásticos através de livros, jogos e conversas inspiradoras.</p>
+                    <p>Atendimento disponivel nos idiomas: 🇵🇹 Português, 🇬🇧 Inglês e 🇪🇸 Espanhol.</p>
                     <div class="features">
                         <div class="feature">
                             <i class="fas fa-coffee"></i>
@@ -69,11 +68,6 @@ ac<!DOCTYPE html>
                             <i class="fas fa-book"></i>
                             <h3>Biblioteca</h3>
                             <p>Acervo especializado em fantasia e ficção</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-dice-d20"></i>
-                            <h3>RPG Sessions</h3>
-                            <p>Mesas disponíveis para suas aventuras</p>
                         </div>
                     </div>
                 </div>
@@ -88,6 +82,7 @@ ac<!DOCTYPE html>
     <section id="activities" class="activities">
         <div class="container">
             <h2 class="section-title">Nossas Atividades</h2>
+            <p class="activities-subtitle">Programação dinâmica, consultar o status do instagram.</p>
             <div class="activities-grid">
                 <div class="activity-card">
                     <div class="activity-icon">
@@ -95,7 +90,6 @@ ac<!DOCTYPE html>
                     </div>
                     <h3>Encontros Literários</h3>
                     <p>Clube do livro mensal com discussões sobre fantasia, ficção científica e literatura contemporânea.</p>
-                    <span class="activity-time">Toda última quinta do mês - 19h</span>
                 </div>
                 <div class="activity-card">
                     <div class="activity-icon">
@@ -103,15 +97,6 @@ ac<!DOCTYPE html>
                     </div>
                     <h3>Sessões de RPG</h3>
                     <p>Sessões de RPG com mestres experientes, cenários únicos.</p>
-                    <span class="activity-time">Programação dinâmica, consultar o status do instagram.</span>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3>Board Game Café</h3>
-                    <p>Biblioteca de jogos de tabuleiro com instrutores para ensinar novos jogos.</p>
-                    <span class="activity-time">Todos os dias - 14h às 22h</span>
                 </div>
                 <div class="activity-card">
                     <div class="activity-icon">
@@ -119,15 +104,13 @@ ac<!DOCTYPE html>
                     </div>
                     <h3>Encontros Filosóficos</h3>
                     <p>Discussões profundas sobre filosofia, ética e questões existenciais em um ambiente acolhedor.</p>
-                    <span class="activity-time">Segunda quarta do mês - 19h30</span>
                 </div>
                 <div class="activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Cursos e Workshops</h3>
-                    <p>Diversos cursos incluindo idiomas, desenho, escrita criativa e muito mais com instrutores especializados.</p>
-                    <span class="activity-time">Agendamento flexível - Consulte horários</span>
+                    <p>Diversos cursos incluindo inglês, desenho, violão, entre outros.</p>
                 </div>
             </div>
         </div>
@@ -493,7 +476,7 @@ ac<!DOCTYPE html>
                             <h3>Prefere WhatsApp?</h3>
                             <p>Entre em contato conosco pelo WhatsApp para uma resposta mais rápida e personalizada!</p>
                             <p class="whatsapp-features">
-                                <i class="fas fa-check"></i> Resposta em até 5 minutos<br>
+                                <i class="fas fa-check"></i> Respostas rápidas<br>
                                 <i class="fas fa-check"></i> Envio de fotos dos produtos<br>
                                 <i class="fas fa-check"></i> Agendamento de eventos<br>
                                 <i class="fas fa-check"></i> Dúvidas sobre cardápio
@@ -541,7 +524,6 @@ ac<!DOCTYPE html>
                     <ul>
                         <li><a href="#activities">Encontros Literários</a></li>
                         <li><a href="#activities">RPG Nights</a></li>
-                        <li><a href="#activities">Board Game Café</a></li>
                         <li><a href="#activities">Encontros Filosóficos</a></li>
                         <li><a href="#activities">Cursos e Workshops</a></li>
                     </ul>

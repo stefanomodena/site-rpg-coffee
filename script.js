@@ -33,10 +33,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        header.classList.add('scrolled');
+        header.style.background = 'rgba(11, 9, 7, 0.96)';
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.classList.remove('scrolled');
+        header.style.background = 'rgba(11, 9, 7, 0.92)';
         header.style.boxShadow = 'none';
     }
 });
@@ -169,28 +170,11 @@ images.forEach(img => {
     }
 });
 
-// Efeito de digitação para o título principal
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.textContent = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Aplicar efeito de digitação quando a página carregar
+// Hero brand: CSS handles entrance; keep gold span markup intact
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero h1');
+    const heroTitle = document.querySelector('.hero-brand');
     if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        typeWriter(heroTitle, originalText, 80);
+        heroTitle.classList.add('is-ready');
     }
 });
 
@@ -252,16 +236,16 @@ scrollToTopBtn.style.cssText = `
     left: 2rem;
     width: 50px;
     height: 50px;
-    background: #8B4513;
-    color: white;
-    border: none;
+    background: #c59b6d;
+    color: #0b0907;
+    border: 1px solid #a67c52;
     border-radius: 50%;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1000;
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 5px 15px rgba(197, 155, 109, 0.3);
 `;
 
 document.body.appendChild(scrollToTopBtn);
@@ -307,7 +291,7 @@ document.addEventListener('keydown', (e) => {
     
     if (konamiCode.join(',') === konamiSequence.join(',')) {
         // Ativar modo especial
-        document.body.style.background = 'linear-gradient(45deg, #8B4513, #A0522D, #CD853F, #DEB887)';
+        document.body.style.background = 'linear-gradient(45deg, #0b0907, #c59b6d, #a67c52, #1a1410)';
         document.body.style.backgroundSize = '400% 400%';
         document.body.style.animation = 'gradientShift 3s ease infinite';
         

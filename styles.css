@@ -273,6 +273,19 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-lang {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 12px 22px;
+}
+
+.btn-lang:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
 /* Section Titles */
 .section-title {
     text-align: center;
@@ -563,8 +576,12 @@ body {
 
 .team-panel p {
     color: var(--text-muted);
-    font-size: 1.15rem;
+    font-size: 1.08rem;
     line-height: 1.85;
+}
+
+.team-panel p + p {
+    margin-top: 1.25rem;
 }
 
 /* Coffee methods */
@@ -663,13 +680,15 @@ body {
 }
 
 .activities-subtitle {
+    max-width: 860px;
+    margin: 0 auto 3rem;
     text-align: center;
-    font-size: 1.05rem;
-    color: var(--gold);
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 3rem;
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.8;
+    text-transform: none;
 }
 
 .activities-grid {
@@ -757,6 +776,19 @@ body {
     font-size: 1.08rem;
     line-height: 1.85;
     text-align: center;
+}
+
+.games-description p {
+    margin-bottom: 1.15rem;
+}
+
+.games-description p:last-child {
+    margin-bottom: 0;
+}
+
+.games-description strong {
+    color: var(--text);
+    font-weight: 600;
 }
 
 .games-gallery {
@@ -908,7 +940,17 @@ body {
 .products-description p {
     font-size: 1.1rem;
     color: var(--text-muted);
-    line-height: 1.8;
+    line-height: 1.85;
+    margin-bottom: 1.15rem;
+}
+
+.products-description p:last-child {
+    margin-bottom: 0;
+}
+
+.products-description strong {
+    color: var(--text);
+    font-weight: 600;
 }
 
 .products-carousel {
@@ -1340,6 +1382,28 @@ body {
 .reviews {
     padding: var(--section-pad);
     background: var(--bg-elevated);
+}
+
+.reviews-description {
+    max-width: 860px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.reviews-description p {
+    color: var(--text-muted);
+    font-size: 1.08rem;
+    line-height: 1.85;
+    margin-bottom: 1.15rem;
+}
+
+.reviews-description p:last-child {
+    margin-bottom: 0;
+}
+
+.reviews-description strong {
+    color: var(--text);
+    font-weight: 600;
 }
 
 .reviews-grid {
